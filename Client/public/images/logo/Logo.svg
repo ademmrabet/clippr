@@ -1,0 +1,13 @@
+<svg id="home_page" data-name="home page" xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" viewBox="0 0 1440 1024">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 83.333px;
+        fill: #fff;
+        font-family: Inter;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <text id="Clippr" class="cls-1" transform="translate(72.624 571.405) scale(5.17)">Clippr</text>
+</svg>
