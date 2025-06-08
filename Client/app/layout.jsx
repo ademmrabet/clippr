@@ -13,7 +13,8 @@ const MainLayout = ({ children }) => {
             <meta name='keywords' content='social media, agency, digital marketing, branding' />
             <meta name='author' content='Clippr' />
         </head>
-        <body className='top-0'>
+        <body className='top-0 bg-cover bg-center bg-no-repeat bg-[url(/images/landing_page/background.png)]'
+          suppressHydrationWarning={true}>
           <Navbar />
             <main>
                 {children}
