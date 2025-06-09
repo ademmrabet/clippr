@@ -9,7 +9,7 @@ const Packs = () => {
   const [plan, setPlan] = useState('monthly');
 
   return (
-    <div className='w-full h-screen flex flex-col items-center justify-center text-white min-h-screen p-4'>
+    <div className='w-full h-screen flex flex-col items-center justify-center text-white min-h-screen pt-[75px]'>
       {/* Text Section */}
       <div className='flex flex-col items-center justify-center text-center p-4 pt-[180px]'>
         <h2 className='text-[24px] font-Inter font-semibold'>Choose a plan that's perfect for you</h2>
@@ -49,7 +49,7 @@ const Packs = () => {
           ></div>
       </div>
       {/* Pricing Cards Section */}
-       <div className='flex flex-row items-center justify-center gap-6 m-6'>
+       <div className='flex flex-row items-center justify-center w-full h-[550px] pb-4 gap-6 m-6'>
         {/* Starter Card */}
         <div className='bg-gray-950 w-[350px] h-[500px] rounded-md p-4 flex flex-col'>
           <div className='p-2'>
