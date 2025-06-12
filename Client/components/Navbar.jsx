@@ -2,12 +2,15 @@
 
 import Link from 'next/link'
 import React from 'react'
-import LogoSvg from "@/public/images/logo/Logo.svg"
-import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { motion, useScroll, useMotionValueEvent, useTime, useTransform } from "motion/react"
 import { useState, useEffect } from 'react'
 
 const Navbar = () => {
+  const [monthly, setMonthly] = useState(true);
+  let packagePrice = 0; 
+
+
 
   const time = useTime();
 
@@ -16,7 +19,7 @@ const Navbar = () => {
   });
 
   const rotatingBg = useTransform(rotate, (r) => {
-    return `conic-gradient(from ${r}deg, #097dff, #575aff, #cb80ff, #f88bff, #ffa8f7)`;
+    return `linear-gradient(${r}deg, #CC00CC, #6307ec)`;
   })
 
 
@@ -31,6 +34,14 @@ const Navbar = () => {
     }
   })
 
+  const pathname = usePathname();
+  let buttonText = "Get started";
+  if (pathname === "/") {
+    buttonText = "Get started";
+  } else {
+    buttonText = "Sign up";
+  }
+
   return (
     <motion.nav
       variants={{
@@ -43,7 +54,7 @@ const Navbar = () => {
           <div className=" flex w-[25%] justify-center items-center font-Inter font-bold">
             <h2 className='text-white text-[25px]'>Clippr</h2>
           </div>
-          <div className=' items-center gap-[55px] hidden md:flex text-white text-[17px] font-light border-white border-[1px] rounded-full p-2'>
+          <div className=' items-center gap-[55px] hidden md:flex text-white text-[17px] font-light p-2'>
             <Link href="/" className=" h-[50%] w-[50%]  hover:bg-gray-500 hover:bg-opacity-25 pl-2 pr-2 rounded-md" > Home </Link>
             <Link href="/about" className=" h-[50%] w-[50%]  hover:bg-gray-500 hover:bg-opacity-25 pl-2 pr-2 rounded-md"> About </Link>
             <Link href="/packs" className=" h-[50%] w-[50%]  hover:bg-gray-500 hover:bg-opacity-25 pl-2 pr-2 rounded-md"> Packs </Link>
@@ -53,11 +64,15 @@ const Navbar = () => {
            <div className='relative'>
             <button 
             className='relative bg-black text-white font-Inter font-light px-3 py-2 rounded-md hover:bg-neutral-900 transition-colors duration-200 z-10 cursor-pointer'
-            onClick={() => alert("Button Clicked!")}>Get Started</button>
+            onClick={() => alert("Button Clicked!")}>
+              {buttonText}
+            </button>
             <motion.div className='absolute -inset-[1px] rounded-md'
             style={{
-              background : rotatingBg
-            }}/>
+              background : rotatingBg,
+            }}
+            
+            />
            </div>
           </div>
       </motion.nav>
